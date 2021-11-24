@@ -1,22 +1,15 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import './App.css';
 import Header from "./Header";
-import ToDoForm from "./forms/ToDoForm";
 import ToDoList from "./ToDoList";
-
+import "./ToDoList.css";
 class App extends Component {
   state = {
    items: [
      {
-       text: "Walk dog"
-     },
-     {
-       text: "get groceries"
-     },
-     {
-       text: "make doctors appointment"
-     },
+       text: ""
+     }
+     
     ],
   };
 
@@ -36,7 +29,7 @@ class App extends Component {
       <div>
         <Header />
         <ToDoList items={this.state.items}/>
-        <ToDoForm />
+
       </div>
       
         
