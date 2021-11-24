@@ -31,9 +31,11 @@
   margin-bottom: 15px;
   border-radius: 5px;
   list-style: none;
+  
 }
 ul.theList {
   padding: 0;
+
 }
 
 .todoListMain .theList li {
@@ -42,11 +44,22 @@ ul.theList {
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 5px;
-   
     transition: background-color .2s ease-out;
+  
   }
    
   .todoListMain .theList li:hover {
     background-color: #BCB8F5;
     cursor: pointer;
+  }
+  .todoListMain {
+    border-radius: 25px;
+    border: 2px solid #BCB8F5;
+    margin-right: 100px;
+    margin-left: 100px;
+  }
+
+  .theList{
+    margin-left: 360px;
+    justify-content: center;
   }
