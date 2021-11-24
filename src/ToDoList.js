@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import TodoItem from "./TodoItem";
+import "./ToDoList.css";
 class ToDoList extends Component {
 constructor(props) {
     super(props);
@@ -9,6 +10,7 @@ constructor(props) {
     };
 
     this.addItem = this.addItem.bind(this);
+    this.deleteItem = this.deleteItem.bind(this)
 }
 
     addItem(e) {
@@ -29,6 +31,17 @@ constructor(props) {
         e.preventDefault();
 
 }
+
+  deleteItem(key) {
+    const filteredItems = this.state.items.filter(function (item) {
+      return (item.key !== key);
+    });
+
+    this.setState({
+      items: filteredItems
+    });
+  }
+
     render() {
         return (
           <div className="todoListMain">
@@ -39,8 +52,9 @@ constructor(props) {
                 </input>
                 <button type="submit">Add Task</button>
               </form>
-            </div>
-            <TodoItem entries={this.state.items} />
+            </div >
+            <TodoItem entries={this.state.items} 
+            delete={this.deleteItem}/>
           </div>
         );
       }
